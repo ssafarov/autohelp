@@ -1,0 +1,13 @@
+syntax: glob
+node_modules/*
+node_modules\*
+.bower-*/*
+.bower-*\*
+bower_components/*
+bower_components\*
+dist
+.tmp
+.sass-cache
+
+
+*.log
