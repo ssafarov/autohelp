@@ -15,7 +15,10 @@ module.exports = {
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-        'public/lib/angular-file-upload/angular-file-upload.js'
+        'public/lib/angular-file-upload/angular-file-upload.js',
+        '//maps.googleapis.com/maps/api/js?sensor=false',
+        'public/lib/lodash/dist/lodash.underscore.js',
+        'public/lib/angular-google-maps/dist/angular-google-maps.js']
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
