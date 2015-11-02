@@ -93,8 +93,8 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       $scope.$watch('article.lat + article.lon',function(newVal,oldVal){
         if(newVal === oldVal){return;}
         // checks if value has changed
-        map.setCenter({ latitude:$scope.article.latitude, longitude:$scope.article.longitude});
-        marker.setPosition({latitude:$scope.article.latitude, longitude:$scope.article.longitude});
+        map.setCenter({ latitude:$scope.article.latitude, longitude:$scope.article.longitude });
+        marker.setPosition({ latitude:$scope.article.latitude, longitude:$scope.article.longitude });
       });
     });
 
