@@ -3,6 +3,9 @@
     <h1>New Article</h1>
   </div>
   <div class="col-md-12">
+    <map center="[{{latitude}},{{longitude}}]" zoom ='5'>
+      <marker position="[{{latitude}},{{longitude}}]" visible="true"></marker>
+    </map>
     <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
@@ -21,6 +24,20 @@
         </div>
         <div ng-show="error" class="text-danger">
           <strong ng-bind="error"></strong>
+        </div>
+        <!-- latitude -->
+        <div class="form-group">
+          <label class="control-label" for="content">Latitude</label>
+          <div class="controls">
+            <textarea name="latitude" data-ng-model="latitude" id="latitude" class="form-control" cols="10" rows="1" placeholder="Latitude"></textarea>
+          </div>
+        </div>
+        <!-- longitude -->
+        <div class="form-group">
+          <label class="control-label" for="content">Longitude</label>
+          <div class="controls">
+            <textarea name="longitude" data-ng-model="longitude" id="longitude" class="form-control" cols="10" rows="1" placeholder="Longitude"></textarea>
+          </div>
         </div>
       </fieldset>
     </form>

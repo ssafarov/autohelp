@@ -18,7 +18,10 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       // Create new Article object
       var article = new Articles({
         title: this.title,
-        content: this.content
+        content: this.content,
+        //////
+        longitude: this.longitude,
+        latitude: this.latitude
       });
 
       // Redirect after save
@@ -28,6 +31,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         // Clear form fields
         $scope.title = '';
         $scope.content = '';
+        //////
+        $scope.longitude = 0;
+        $scope.latitude = 0;
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
@@ -79,6 +85,22 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       $scope.article = Articles.get({
         articleId: $stateParams.articleId
       });
+    };
+
+    $scope.$on('mapInitialized', function(event,map) {
+      var marker = map.markers[0];
+
+      $scope.$watch('article.lat + article.lon',function(newVal,oldVal){
+        if(newVal === oldVal){return;}
+        // checks if value has changed
+        map.setCenter({ latitude:$scope.article.latitude, longitude:$scope.article.longitude});
+        marker.setPosition({latitude:$scope.article.latitude, longitude:$scope.article.longitude});
+      });
+    });
+
+    //marker link
+    $scope.gotolink= function(event,i) {
+      $location.path('articles/'+ i._id);
     };
   }
 ]);

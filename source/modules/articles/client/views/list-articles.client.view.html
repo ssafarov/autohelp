@@ -3,6 +3,12 @@
     <h1>Articles</h1>
   </div>
   <div class="list-group">
+    <map center="[0,0]" zoom="1">
+      <marker ng-repeat='article in articles' position='[{{article.latitude}},{{article.longitude}}]' visible="true" on-click="gotolink(event,article)">
+      </marker>
+    </map>
+    <p class="list-group-item-text" data-ng-bind="article.latitude"></p>
+    <p class="list-group-item-text" data-ng-bind="article.longitude"></p>
     <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
