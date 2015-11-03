@@ -17,7 +17,8 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/ngMap/build/scripts/ng-map.min.js'
+        'http://maps.google.com/maps/api/js', // I'm using a CDN
+        'public/lib/ngMap/build/scripts/ng-map.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
