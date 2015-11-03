@@ -1,5 +1,5 @@
 'use strict';
-
+//@todo: Separate assets according to environments
 module.exports = {
   client: {
     lib: {
