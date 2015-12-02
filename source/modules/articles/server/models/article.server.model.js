@@ -28,6 +28,16 @@ var ArticleSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  latitude:{
+    type: Number,
+    default: 0,
+    trim: true
+  },
+  longitude:{
+    type: Number,
+    default: 0,
+    trim: true
   }
 });
 
