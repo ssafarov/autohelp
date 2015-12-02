@@ -1,5 +1,11 @@
 .content {
-  margin-top: 50px;
+  position: absolute;
+  z-index: 494;
+  width: 100% !important;
+  height: 100%;
+}
+header.navbar{
+  margin-bottom: 0;
 }
 .undecorated-link:hover {
   text-decoration: none;
