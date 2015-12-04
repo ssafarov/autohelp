@@ -38,7 +38,12 @@
 <body class="ng-cloak">
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
   <section class="content">
-      {% block content %}{% endblock %}
+    <map zoom ='4' class="content" ng-class="{ blurred:needBlur }">
+      <!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
+      <marker position="[0,0]" visible="true"> </marker>
+    </map>
+
+    {% block content %}{% endblock %}
   </section>
 
   <!--Embedding The User Object-->
