@@ -1,0 +1,20 @@
+<section ng-controller="ProfilesController" ng-init="find()">
+  <div class="page-header">
+    <h1>Profiles</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="profile in profiles" ui-sref="profiles.view({profileId: profile._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="profile.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="profile.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="profile.title"></h4>
+      <p class="list-group-item-text" ng-bind="profile.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="profiles.$resolved && !profiles.length">
+    No profiles yet, why don't you <a ui-sref="profiles.create">create one</a>?
+  </div>
+</section>
