@@ -1,5 +1,4 @@
 <div ng-controller="AuthenticationController">
-  {{needBlur}}
   <h3 class="text-center">or sign up using your own details</h3>
   <div class="column-80">
     <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
@@ -49,7 +48,7 @@
         </div>
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Sign up</button>
-          &nbsp; or&nbsp;
+          &nbsp;or&nbsp;
           <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
         </div>
         <div ng-show="error" class="text-center text-danger">
