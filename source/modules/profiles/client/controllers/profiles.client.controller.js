@@ -34,6 +34,8 @@ angular.module('profiles').controller('ProfilesController', ['$scope', '$statePa
         //////
         $scope.longitude = 0;
         $scope.latitude = 0;
+        $scope.location = [0,0];
+
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });

@@ -42,7 +42,7 @@
 
     <map zoom ='4' class="content" ng-class="{ blurred: $state.blurred }">
       <!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
-      <marker position="[0,0]" visible="true"> </marker>
+      <marker position="{{geolocationService.getCurrentPosition()}}" visible="true"> </marker>
     </map>
 
     {% block content %}{% endblock %}

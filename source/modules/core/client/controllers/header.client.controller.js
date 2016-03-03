@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus',
-  function ($scope, $state, Authentication, Menus) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', 'geolocationService',
+  function ($scope, $state, Authentication, Menus, geolocationService) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
+    $scope.position = geolocationService.getCurrentPosition();
 
     // Get the topbar menu
     $scope.menu = Menus.getMenu('topbar');
