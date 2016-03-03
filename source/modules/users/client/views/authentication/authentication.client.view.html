@@ -1,12 +1,57 @@
-<section class="row" ng-controller="AuthenticationController">
-  <h3 class="col-md-12 text-center">Sign in using your social accounts</h3>
-  <div class="col-md-12 text-center">
-    <img ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
-    <img ng-click="callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png">
-    <img ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png">
-    <img ng-click="callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png">
-    <img ng-click="callOauthProvider('/api/auth/github')" ng-src="/modules/users/client/img/buttons/github.png">
-    <img ng-click="callOauthProvider('/api/auth/paypal')"  ng-src="/modules/users/client/img/buttons/paypal.png">
+<section ng-controller="AuthenticationController">
+
+  <style>
+    .body {
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+    }
+    .popup{
+      width: 700px;
+      /*height: 650px;*/
+      margin: 100px auto 0;
+      border-radius: 3px;
+      position: relative;
+      padding: 20px 10px;
+      z-index: 5000;
+    }
+    .white {
+      background-color: #fff !important;
+    }
+    .popup-content{
+      display: block;
+      float: none!important;
+    }
+    .icons > img {
+      width: 64px;
+      height: 64px;
+    }
+    .column-80{
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .popup:before,
+    .popup:after {
+      content:"";
+      display:table;
+    }
+    .popup:after {
+      clear:both;
+    }
+
+  </style>
+  <div class="popup white">
+    <div class="popup-content col-lg-12 ">
+      <h3 class="text-center">Sign in using your social accounts</h3>
+      <div class="text-center icons">
+        <img ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
+        <img ng-click="callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png">
+        <img ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png">
+        <img ng-click="callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png">
+        <img ng-click="callOauthProvider('/api/auth/github')" ng-src="/modules/users/client/img/buttons/github.png">
+        <img ng-click="callOauthProvider('/api/auth/paypal')"  ng-src="/modules/users/client/img/buttons/paypal.png">
+      </div>
+      <div ui-view></div>
+    </div>
   </div>
-  <div ui-view></div>
 </section>
