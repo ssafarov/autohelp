@@ -40,9 +40,9 @@
 
   <section class="content" ng-controller="HomeController">
 
-    <map zoom ='4' class="content" ng-class="{ blurred: $state.blurred }">
+    <map zoom ='4' class="content" center="{{$position}}" ng-class="{ blurred: $state.blurred }">
       <!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
-      <marker position="{{geolocationService.getCurrentPosition()}}" visible="true"> </marker>
+      <marker position="{{$position.coords}}" visible="true"> </marker>
     </map>
 
     {% block content %}{% endblock %}
