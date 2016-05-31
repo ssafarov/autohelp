@@ -38,12 +38,12 @@
 <body class="ng-cloak">
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 
-  <section class="content" ng-controller="HomeController">
+  <section class="content">
 
-    <map zoom ='4' class="content" center="{{$position.coords}}" ng-class="{ blurred: $state.blurred }">
-      <!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
-      <marker position="{{$position.coords}}" visible="true"> </marker>
-    </map>
+    <section class="global-map" ng-controller="GeoController" >
+      <div id="mapCanvas" ui-map="model.earthMap" class="map" ui-options="mapOptions" ng-class="{ blurred: $state.blurred }"></div>
+      <div ng-repeat="marker in mapMarkers" ui-map-marker="mapMarkers[$index]"></div>
+    </section>
 
     {% block content %}{% endblock %}
   </section>
@@ -57,8 +57,8 @@
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
   <!--Application JavaScript Files-->
-  {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
-
+  {% for jsFile in jsFiles %}
+  <script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
   {% if livereload %}
   <!--Livereload script rendered -->
   <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>

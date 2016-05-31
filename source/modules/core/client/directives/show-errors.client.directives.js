@@ -10,7 +10,7 @@ angular.module('core')
       var inputEl, inputName, inputNgEl, options, showSuccess, toggleClasses,
         initCheck = false,
         showValidationMessages = false,
-        blurred = false;
+        blurred = true;
 
       options = scope.$eval(attrs.showErrors) || {};
       showSuccess = options.showSuccess || false;

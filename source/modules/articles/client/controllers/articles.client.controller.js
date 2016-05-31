@@ -1,8 +1,11 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-  function ($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('articles').controller('ArticlesController', ['$scope', '$state', '$stateParams', '$location', 'Authentication', 'Articles',
+  function ($scope, $state, $stateParams, $location, Authentication, Articles) {
+    $state.blurred = true;
+    $scope.blurred = true;
+    $scope.$state = $state;
     $scope.authentication = Authentication;
 
     // Create new Article

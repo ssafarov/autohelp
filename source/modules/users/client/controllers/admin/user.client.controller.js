@@ -2,6 +2,8 @@
 
 angular.module('users.admin').controller('UserController', ['$scope', '$state', 'Authentication', 'userResolve',
   function ($scope, $state, Authentication, userResolve) {
+    $state.blurred = true;
+    $scope.$state = $state;
     $scope.authentication = Authentication;
     $scope.user = userResolve;
 

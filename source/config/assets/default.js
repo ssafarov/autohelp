@@ -14,11 +14,11 @@ module.exports = {
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/angular-ui-utils/ui-utils.js',
+        'public/lib/angular-ui-map/ui-map.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'http://maps.google.com/maps/api/js', // I'm using a CDN
-        'public/lib/ngMap/build/scripts/ng-map.js'
+        'http://maps.google.com/maps/api/js' // I'm using a CDN
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
