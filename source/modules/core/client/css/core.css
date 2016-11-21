@@ -1,0 +1,64 @@
+.content {
+  position: absolute;
+  z-index: 494;
+  width: 100% !important;
+  height: 100%;
+}
+map {
+  height: 100vh;
+  display: block;
+  top:0;
+  position: absolute;
+}
+header.navbar{
+  margin-bottom: 0;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+
+[ng\:blurred],
+[ng-blurred],
+[x-ng-blurred],
+.ng-blurred,
+.x-ng-blurred,
+.blurred{
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  background-color: #eee;
+}
+
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
